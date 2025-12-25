@@ -1,0 +1,113 @@
+:root {
+    --primary-blue: #2563eb;
+    --light-blue: #eff6ff;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--light-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: var(--text-dark);
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    max-width: 500px;
+}
+
+/* SVG Animation Styles */
+.animation-container {
+    width: 250px;
+    margin: 0 auto 30px auto;
+}
+
+svg {
+    width: 100%;
+    height: auto;
+}
+
+circle {
+    fill: none;
+    stroke: var(--primary-blue);
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.circle-inner {
+    stroke-dasharray: 10, 20;
+    animation: rotate 4s linear infinite;
+}
+
+.ring-mid {
+    stroke-opacity: 0.4;
+    stroke-dasharray: 80, 50;
+    animation: rotate 8s linear infinite reverse;
+}
+
+.ring-out {
+    stroke-opacity: 0.2;
+    stroke-dasharray: 150, 100;
+    animation: rotate 12s linear infinite;
+}
+
+.dot {
+    fill: var(--primary-blue);
+    stroke: none;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); transform-origin: center; }
+    to { transform: rotate(360deg); transform-origin: center; }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); transform-origin: center; }
+    50% { opacity: 0.3; transform: scale(0.8); transform-origin: center; }
+}
+
+/* Text & Button Styles */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+h1 span {
+    color: var(--primary-blue);
+}
+
+p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.go-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 30px;
+    background-color: var(--primary-blue);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2);
+}
+
+.go-back-btn:hover {
+    background-color: #1d4ed8;
+    transform: translateX(-5px);
+    box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.3);
+}
