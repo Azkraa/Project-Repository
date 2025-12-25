@@ -1,0 +1,109 @@
+:root {
+    --primary-blue: #2563eb;       /* Main Branding Blue */
+    --light-blue: #eff6ff;         /* Background Tint */
+    --border-blue: #dbeafe;        /* Subtle Borders */
+    --text-main: #1e293b;          /* Navy/Dark Slate for text */
+    --text-muted: #64748b;         /* Grey-blue for descriptions */
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--light-blue);
+    color: var(--text-main);
+    margin: 0;
+    padding: 40px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+header h1 {
+    font-weight: 800;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+header h1 span {
+    color: var(--primary-blue);
+}
+
+header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive Grid */
+.grid-container {
+    display: grid;
+    /* Responsive logic: 1 col on mobile, 2 on tablet, 3 on PC */
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+}
+
+.project-card {
+    background: var(--white);
+    border: 1px solid var(--border-blue);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-blue);
+    box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.1);
+}
+
+.project-card h3 {
+    margin: 0 0 12px 0;
+    font-size: 1.4rem;
+    color: var(--text-main);
+}
+
+.project-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    flex-grow: 1; /* Pushes the button to the bottom */
+}
+
+.link-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+    width: fit-content;
+}
+
+.link-btn:hover {
+    background-color: #1d4ed8; /* Slightly darker blue */
+}
+
+/* Tablet / Mobile Adjustments */
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Force 1 column on small phones */
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}
