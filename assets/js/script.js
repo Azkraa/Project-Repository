@@ -20,9 +20,9 @@ const projects = [
         link: "" // Will trigger coming-soon.html
     },
     {
-        title: "Fashlog",
+        title: "Avery Catalog",
         desc: "A minimalist digital catalog for fashion brands looking for a clean online presence.",
-        link: "" // Will trigger coming-soon.html
+        link: "https://azkraa.github.io/Avery-Catalog/" // Will trigger coming-soon.html
     }
 ];
 
